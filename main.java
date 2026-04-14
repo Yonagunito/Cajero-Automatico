@@ -1,0 +1,1 @@
+// empezamos a codificar el cajero automatico (este es el main)
