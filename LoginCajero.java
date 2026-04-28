@@ -1,25 +1,15 @@
-import javax.swing.*;
+ case 4:
+                    // Lógica del Login
+                    String usuarioInput = JOptionPane.showInputDialog("Ingrese Usuario:");
+                    String passwordInput = JOptionPane.showInputDialog("Ingrese Contraseña:");
 
-public class LoginCajero {
-
-    public static void main(String[] args) {
-
-        // Pedir usuario
-        String usuario = JOptionPane.showInputDialog("Ingrese Usuario:");
-
-        // Pedir contraseña
-        String password = JOptionPane.showInputDialog("Ingrese Contraseña:");
-
-        // Verificar datos
-        if (usuario.equals("admin") && password.equals("admin")) {
-
-            JOptionPane.showMessageDialog(null,
-                    "Bienvenido al Cajero Automático");
-
-        } else {
-
-            JOptionPane.showMessageDialog(null,
-                    "Usuario o contraseña incorrectos");
+                    if ("admin".equals(usuarioInput) && "admin".equals(passwordInput)) {
+                        JOptionPane.showMessageDialog(null, "Bienvenido al Cajero Automático");
+                        sesionActiva = true;
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
+                    }
+                    break;
 
         }
 
