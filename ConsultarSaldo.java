@@ -1,33 +1,29 @@
-import java.util.List;
+import javax.swing.*;
 
 public class ConsultarSaldo {
 
-    // Método principal
-    public void mostrarSaldo(Usuario usuario, boolean sesionActiva, List<String> movimientos) {
+    private Usuario usuario;
 
-        // Validar sesión
-        if (!sesionActiva) {
-            System.out.println("Debe iniciar sesión para consultar su saldo.");
+    public ConsultarSaldo(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public void mostrarSaldo() {
+
+        // Validación básica
+        if (usuario == null) {
+            JOptionPane.showMessageDialog(null,
+                    "Debe iniciar sesión para consultar el saldo.");
             return;
         }
 
         try {
-            // Mostrar saldo
-            System.out.println("Saldo actual: $" + usuario.getSaldo());
-
-            // Mostrar movimientos si existen
-            if (movimientos != null && !movimientos.isEmpty()) {
-                System.out.println("Últimos movimientos:");
-                for (String movimiento : movimientos) {
-                    System.out.println("- " + movimiento);
-                }
-            } else {
-                System.out.println("No hay movimientos recientes.");
-            }
+            JOptionPane.showMessageDialog(null,
+                    "Saldo actual: $" + usuario.getSaldo());
 
         } catch (Exception e) {
-            // Manejo de error
-            System.out.println("Error al obtener el saldo. Intente nuevamente.");
+            JOptionPane.showMessageDialog(null,
+                    "Error al obtener el saldo. Intente nuevamente.");
         }
     }
 }
